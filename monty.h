@@ -37,9 +37,10 @@ typedef struct instruction_s
 } instruction_t;
 
 int lenline(int *_file);
-
+char *clean_string(char *entrada, int len);
 
 
 stack_t push(stack_t **head);
 stack_t *pall(stack_t *head);
+
 #endif

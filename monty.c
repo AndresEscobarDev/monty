@@ -22,7 +22,9 @@ int main(int argc, char *argv[])
 
 	while ((_read = getline(&line, &len, _file)) != EOF)
 	{
+		line = clean_string(line, _read);
 		printf("%s", line);
+		printf("\n");
 	}
 
 	return 0;
