@@ -2,10 +2,10 @@
 
 int main(int argc, char *argv[])
 {
-	int _file;
+	FILE *_file;
 	ssize_t _read;
-	char buffer[50];
-	int i;
+	size_t len = 0;
+	char *line = NULL;
 
 	if (argc != 2)
 	{	/*PrintError*/
@@ -13,18 +13,17 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	_file = open(argv[1], O_RDONLY);
-	if (_file == -1)
+	_file = fopen(argv[1], "r");
+	if (!_file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
-	_read = read(_file, buffer, 50);
-	printf("READ %lu\n", _read);
-	for (i = 0; buffer[i]; i++)
-		printf("%c", buffer[i]);
+	while ((_read = getline(&line, &len, _file)) != EOF)
+	{
+		printf("%s", line);
+	}
 
-	printf("%d\n", lenline(&_file));
 	return 0;
 }
