@@ -13,14 +13,13 @@ void push(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	if (data.arguments[1])
 	{
-		while (data.arguments[1][i])
+		for (i = 0; data.arguments[1][i]; i++)
 		{
 			if (data.arguments[1][i] < '0' || data.arguments[1][i] > '9')
 			{
 				print_error(line_number, "usage: push integer");
 				return;
 			}
-			i++;
 		}
 	}
 	else
@@ -28,7 +27,6 @@ void push(stack_t **stack, unsigned int line_number)
 		print_error(line_number, "usage: push integer");
 		return;
 	}
-	
 	n = atoi((const char *)data.arguments[1]);
 	new = malloc(sizeof(stack_t));
 	if (!new)
@@ -36,8 +34,7 @@ void push(stack_t **stack, unsigned int line_number)
 		print_mallocfail();
 		return;
 	}
-	new->n = n;
-	new->prev = NULL;
+	new->n = n, new->prev = NULL;
 	if (!*head)
 	{
 		new->next = NULL;
