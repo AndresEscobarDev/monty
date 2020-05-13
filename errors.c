@@ -33,6 +33,7 @@ void print_mallocfail(void)
  */
 void print_unknown(int number)
 {
-	dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", number, data.arguments[0]);
+	dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n",
+	number, data.arguments[0]);
 	data.status = EXIT_FAILURE;
 }

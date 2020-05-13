@@ -46,7 +46,6 @@ typedef struct instruction_s
  */
 typedef struct Data
 {
-	FILE *file;
 	int status;
 	char **arguments;
 } data_t;

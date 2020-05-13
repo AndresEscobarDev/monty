@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
  * exec_commands - Function that execute the instructions
+ * @lineNumber: Number of lines
  * Return: Instructions functions
  */
 void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
