@@ -44,8 +44,6 @@ typedef struct Data
 } data_t;
 extern data_t data;
 
-extern int gvar[2];
-
 void check_argv(int *argc);
 
 
@@ -54,7 +52,7 @@ int lenline(int *_file);
 char *clean_string(char *entrada, int len);
 char **split_string(char *entrada, char d);
 
-void (*exec_commands(char **arguments, int))(stack_t **, unsigned int);
+void (*exec_commands(void))(stack_t **, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
