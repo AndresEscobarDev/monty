@@ -8,6 +8,7 @@
 void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
+
 	if (!stack || !*stack || !(*stack)->next)
 	{
 		print_error(line_number, "can't add, stack too short");

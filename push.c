@@ -44,5 +44,6 @@ void push(stack_t **stack, unsigned int line_number)
 	current = *stack;
 	while (current->prev)
 		current = current->prev;
-	current->prev = new, new->next = current; *stack = new;
+	current->prev = new, new->next = current;
+	*stack = new;
 }

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * div - divides the second top element of the stack by the top
+ * _div - divides the second top element of the stack by the top
  * element of the stack
  * @stack: stacker of a doubly linked list
  * @line_number: Number line called
@@ -9,6 +9,7 @@
 void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
+
 	if (!stack || !*stack || !(*stack)->next)
 	{
 		print_error(line_number, "can't div, stack too short");
