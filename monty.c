@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 		/*Divide las lineas*/
 		data.arguments = split_string(line, ' ');
 		simple_free(&line);
+
 		/*Mirar si se puede ejecutar, si no libere y exit, imprimir USAGE*/
 		/*con error, si se puede ejecuta y libera arguments*/
 		exec_commands()(&top, lineNumber);

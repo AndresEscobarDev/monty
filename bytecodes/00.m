@@ -1,5 +1,5 @@
-            push         1
-    push  98
+            push
+    push  98         45
            push    3
         push 5
-            pall 4
+            pall

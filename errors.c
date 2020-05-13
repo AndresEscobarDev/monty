@@ -6,7 +6,7 @@
  */
 void print_error(int number, char *str)
 {
-	fprintf(stderr, "L%d: %s\n", number, str);
+	dprintf(STDERR_FILENO, "L%d: %s\n", number, str);
 	data.status = EXIT_FAILURE;
 }
 /**
@@ -14,6 +14,6 @@ void print_error(int number, char *str)
  */
 void print_mallocfail(void)
 {
-	fprintf(stderr, "Error: malloc failed\n");
+	dprintf(STDERR_FILENO, "Error: malloc failed\n");
 	data.status = EXIT_FAILURE;
 }
