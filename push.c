@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * push - pushes an element to the stack.
+ * @stack: stacker of a doubly linked list
+ * @line_number: Number line
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new, *current;

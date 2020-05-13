@@ -1,7 +1,9 @@
 #include "monty.h"
 /**
- * print_dlistint - Function that print a doubly linked list
+ * pall - prints all the values on the stack, starting
+ * from the top of the stack.
  * @stack: stacker of a doubly linked list
+ * @line_number: Number line
  * Return: The number of nodes
  */
 void pall(stack_t **stack, unsigned int line_number)

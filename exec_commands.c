@@ -1,5 +1,8 @@
 #include "monty.h"
-
+/**
+ * exec_commands - Function that execute the instructions
+ * Return: Instructions functions
+ */
 void (*exec_commands(void))(stack_t **, unsigned int)
 {
 	int i = 0;
@@ -21,7 +24,11 @@ void (*exec_commands(void))(stack_t **, unsigned int)
 	}
 	return (nop);
 }
-
+/**
+ * nop - doesn’t do anything.
+ * @stack: stacker of a doubly linked list
+ * @line_number: Number line
+ */
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;

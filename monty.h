@@ -37,6 +37,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct Data - Arguments and status.
+ * @status: exit value
+ * @arguments: arguments by line
+ *
+ * Description: Manage the argument and exit status
+ */
 typedef struct Data
 {
 	int status;
@@ -45,8 +52,6 @@ typedef struct Data
 extern data_t data;
 
 void check_argv(int *argc);
-
-
 
 int lenline(int *_file);
 char *clean_string(char *entrada, int len);
