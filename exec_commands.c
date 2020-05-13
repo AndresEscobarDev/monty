@@ -15,6 +15,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
