@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: stacker of a doubly linked list
+ * @line_number: Number line called
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
