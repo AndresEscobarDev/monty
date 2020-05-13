@@ -10,7 +10,8 @@ char *clean_string(char *entrada, int len)
 	char *new = NULL;
 	int i = 0, j = 0, k = 0, t = 0;
 
-	while (entrada[i] == ' ' || entrada[i] == '\t')
+	while (entrada[i] == ' ' || entrada[i] == '\t' ||
+	entrada[i] == '"' || entrada[i] == '\'')
 		i++, k++;
 	for (t = 0; entrada[t]; t++)
 		if (entrada[t] == '\t')
@@ -36,7 +37,7 @@ char *clean_string(char *entrada, int len)
 			if (!new)
 				return (NULL);
 		}
-		if (entrada[i] != '\n')
+		if (entrada[i] != '\n' && entrada[i] != '"' && entrada[i] != '\'')
 			new[j] = entrada[i], j++, i++;
 		else
 			i++;
