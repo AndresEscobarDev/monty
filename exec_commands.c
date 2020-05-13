@@ -12,6 +12,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"pall", pall},
 		{"nop", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
