@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	FILE *_file;
 	ssize_t _read;
 	size_t len = 0;
-	char *line = NULL, **arguments = NULL;
+	char *line = NULL;
 	stack_t *top = NULL;
 	int lineNumber = 1;
 
@@ -35,12 +35,12 @@ int main(int argc, char *argv[])
 	{
 		line = clean_string(line, _read);
 		/*Divide las lineas*/
-		arguments = split_string(line, ' ');
+		data.arguments = split_string(line, ' ');
 		simple_free(&line);
 		/*Mirar si se puede ejecutar, si no libere y exit, imprimir USAGE*/
 		/*con error, si se puede ejecuta y libera arguments*/
 		exec_commands()(&top, lineNumber);
-		free_argument(arguments);
+		free_argument(data.arguments);
 		lineNumber++;
 	}
 	simple_free(&line);
