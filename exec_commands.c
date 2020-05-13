@@ -10,7 +10,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
-		{"nop", pall},
+		{"nop", nop},
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
