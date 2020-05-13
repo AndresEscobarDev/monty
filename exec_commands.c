@@ -3,7 +3,7 @@
  * exec_commands - Function that execute the instructions
  * Return: Instructions functions
  */
-void (*exec_commands(void))(stack_t **, unsigned int)
+void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 {
 	int i = 0;
 	instruction_t ops[] = {
@@ -13,7 +13,7 @@ void (*exec_commands(void))(stack_t **, unsigned int)
 		{NULL, NULL}
 	};
 
-	if (data.arguments)
+	if (data.arguments[0])
 	{
 		while (ops[i].opcode)
 		{
@@ -21,7 +21,9 @@ void (*exec_commands(void))(stack_t **, unsigned int)
 				return (ops[i].f);
 			i++;
 		}
+		print_unknown(lineNumber);
 	}
+
 	return (nop);
 }
 /**

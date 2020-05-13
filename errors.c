@@ -27,3 +27,12 @@ void print_mallocfail(void)
 	dprintf(STDERR_FILENO, "Error: malloc failed\n");
 	data.status = EXIT_FAILURE;
 }
+/**
+ * print_unknown - Print error message
+ * @number: Number of line
+ */
+void print_unknown(int number)
+{
+	dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", number, data.arguments[0]);
+	data.status = EXIT_FAILURE;
+}

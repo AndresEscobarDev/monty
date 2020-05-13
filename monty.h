@@ -58,7 +58,7 @@ int lenline(int *_file);
 char *clean_string(char *entrada, int len);
 char **split_string(char *entrada, char d);
 
-void (*exec_commands(void))(stack_t **, unsigned int);
+void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
@@ -68,6 +68,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void print_usage(void);
 void print_error(int number, char *str);
 void print_mallocfail(void);
+void print_unknown(int number);
 
 void free_dlistint(stack_t *head);
 void simple_free(char **entrada);
