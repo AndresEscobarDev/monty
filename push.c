@@ -15,7 +15,8 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		for (i = 0; data.arguments[1][i]; i++)
 		{
-			if (data.arguments[1][i] < '0' || data.arguments[1][i] > '9')
+			if ((data.arguments[1][i] < '0' || data.arguments[1][i] > '9') &&
+			data.arguments[1][i] != '-')
 			{
 				print_error(line_number, "usage: push integer");
 				return;
@@ -44,6 +45,5 @@ void push(stack_t **stack, unsigned int line_number)
 	current = *head;
 	while (current->prev)
 		current = current->prev;
-	current->prev = new;
-	new->next = current;
+	current->prev = new, new->next = current;
 }

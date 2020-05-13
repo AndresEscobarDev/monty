@@ -10,9 +10,9 @@ char **split_string(char *entrada, char d)
 	int i = 0, j = 1, k = 0, len = 0, n  = 0, f = 0;
 	char **argumento = NULL;
 
-	n = strlen(entrada);
-	if (entrada[0] == '#' && d == ' ')
+	if (!entrada || (entrada[0] == '#' && d == ' '))
 		return (argumento);
+	n = strlen(entrada);
 	for (f = 0; entrada[f] && (((d != ' ' || (entrada[f + 1] &&
 	entrada[f + 1] != '#'))) || entrada[f] != ' '); f++)
 		j++;

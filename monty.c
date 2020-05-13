@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
 		line = clean_string(line, _read);
 		data.arguments = split_string(line, ' ');
 		simple_free(&line);
-		exec_commands(lineNumber)(&top, lineNumber);
+		if (data.arguments)
+			exec_commands(lineNumber)(&top, lineNumber);
 		free_argument(data.arguments);
 		lineNumber++;
 	}
