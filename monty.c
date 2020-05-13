@@ -17,12 +17,8 @@ int main(int argc, char *argv[])
 	int lineNumber = 1;
 
 	gvar[0] = gvar[1] = 0;
-	/* Funcion que cuenta los arguments*/
-	if (argc != 2)
-	{	/*PrintError*/
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+	/* Check if argc is != 2*/
+	check_argv(&argc);
 
 	/*Funcion que Abre el archivo*/
 	_file = fopen(argv[1], "r");

@@ -39,6 +39,10 @@ typedef struct instruction_s
 
 extern int gvar[2];
 
+void check_argv(int *argc);
+
+
+
 int lenline(int *_file);
 char *clean_string(char *entrada, int len);
 char **split_string(char *entrada, char d);
