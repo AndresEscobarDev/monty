@@ -15,6 +15,11 @@ void _div(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
+	if ((*stack)->n == 0)
+	{
+		print_error(line_number, "division by zero");
+		return;
+	}
 	temp = *stack;
 	(*stack)->next->n /= temp->n;
 	*stack = (*stack)->next;
