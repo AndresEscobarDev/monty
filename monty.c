@@ -47,6 +47,9 @@ int main(int argc, char *argv[])
 	simple_free(&line);
 	free_dlistint(top);
 	fclose(_file);
-	/*Close File y Free*/
-	return (data.status);
+	
+	if (data.status == EXIT_FAILURE)
+		exit(EXIT_FAILURE);
+
+	return (EXIT_SUCCESS);
 }
