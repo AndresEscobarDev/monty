@@ -15,15 +15,15 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	while (temp)
 	{
-		if (temp->n >= 1 && temp->n <= 127)
-			printf("%c", temp->n);
-
-		temp = temp->next;
-
-		if (temp->n == 0 || !temp)
+		if (temp->n < 1 || temp->n > 127)
 		{
+			if (temp->n == 0)
+				printf("%c", temp->n);
+
 			printf("\n");
 			return;
 		}
+		printf("%c", temp->n);
+		temp = temp->next;
 	}
 }
