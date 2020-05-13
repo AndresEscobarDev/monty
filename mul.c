@@ -11,7 +11,7 @@ void mul(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
-		print_error(line_number, "can't sub, stack too short");
+		print_error(line_number, "can't mul, stack too short");
 		return;
 	}
 
