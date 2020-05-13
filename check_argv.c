@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void print_usage()
+void print_usage(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);

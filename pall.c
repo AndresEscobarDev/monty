@@ -6,9 +6,9 @@
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number;
 	int i;
 	stack_t *h = *stack;
+	(void)line_number;
 
 	if (!stack || !h)
 		return;

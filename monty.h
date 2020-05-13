@@ -37,6 +37,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct Data
+{
+	int status;
+	char **arguments;
+} data_t;
+extern data_t data;
+
 extern int gvar[2];
 
 void check_argv(int *argc);

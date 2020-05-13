@@ -1,6 +1,7 @@
 #include "monty.h"
 
 int gvar[2];
+
 /**
  * main - su madre
  * @argc: no la tuya
@@ -9,6 +10,7 @@ int gvar[2];
  */
 int main(int argc, char *argv[])
 {
+	data_t data;
 	FILE *_file;
 	ssize_t _read;
 	size_t len = 0;
@@ -16,7 +18,9 @@ int main(int argc, char *argv[])
 	stack_t *top = NULL;
 	int lineNumber = 1;
 
-	gvar[0] = gvar[1] = 0;
+	data.status = 0;
+	data.arguments = NULL;
+
 	/* Check if argc is != 2*/
 	check_argv(&argc);
 
@@ -29,7 +33,7 @@ int main(int argc, char *argv[])
 	}
 
 	/*Funcion que lee el archivo*/
-	while (((_read = getline(&line, &len, _file)) != EOF) && gvar[0] == 0)
+	while (((_read = getline(&line, &len, _file)) != EOF) && data.status == 0)
 	{
 		line = clean_string(line, _read);
 		/*Divide las lineas*/
@@ -45,5 +49,5 @@ int main(int argc, char *argv[])
 	free_dlistint(top);
 	fclose(_file);
 	/*Close File y Free*/
-	return (gvar[0]);
+	return (data.status);
 }

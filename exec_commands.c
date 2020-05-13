@@ -10,26 +10,26 @@ void (*exec_commands(char **arg, int line_number))(stack_t **, unsigned int)
 		{NULL, NULL}
 	};
 
-	if (arg)
+	if (data.arguments)
 	{
-		if (strcmp("push", arg[0]) == 0)
+		if (strcmp("push", data.arguments[0]) == 0)
 		{
 			/*Si es un numero*/
-			while (arg[1][i])
+			while (data.arguments[1][i])
 			{
-				if (arg[1][i] < '0' || arg[1][i] > '9')
+				if (data.arguments[1][i] < '0' || data.arguments[1][i] > '9')
 				{
 					print_error(line_number, "usage: push integer");
 					return (nop);
 				}
 				i++;
 			}
-			gvar[1] = atoi((const char *)arg[1]);
+			data.arguments = atoi((const char *)arg[1]);
 		}
 		i = 0;
 		while (ops[i].opcode)
 		{
-			if (strcmp(ops[i].opcode, arg[0]) == 0)
+			if (strcmp(ops[i].opcode, data.arguments[0]) == 0)
 				return (ops[i].f);
 			i++;
 		}
