@@ -7,7 +7,7 @@
 void print_error(int number, char *str)
 {
 	fprintf(stderr, "L%d: %s\n", number, str);
-	data.status = -1;
+	data.status = EXIT_FAILURE;
 }
 /**
  * print_mallocfail - Print error message
@@ -15,5 +15,5 @@ void print_error(int number, char *str)
 void print_mallocfail(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	data.status = -1;
+	data.status = EXIT_FAILURE;
 }
