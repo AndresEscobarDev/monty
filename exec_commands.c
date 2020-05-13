@@ -18,6 +18,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
