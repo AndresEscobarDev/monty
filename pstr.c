@@ -9,18 +9,21 @@ void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	(void)line_number;
-
+ 
 	if (!stack || !*stack)
 		printf("\n");
 
 	while (temp)
 	{
-		if (temp->n < 1 || temp->n > 127)
+		if (temp->n >= 1 && temp->n <= 127)
+			printf("%c", temp->n);
+
+		temp = temp->next;
+
+		if (temp->n == 0 || !temp)
 		{
 			printf("\n");
 			return;
 		}
-		printf("%c", temp->n);
-		temp = temp->next;
 	}
 }
