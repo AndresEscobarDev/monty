@@ -10,7 +10,12 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	int i;
 	stack_t *h = *stack;
-	(void)line_number;
+
+	if (data.arguments[1])
+	{
+		print_error(line_number, "usage: pall");
+		return;
+	}
 
 	if (!stack || !h)
 		return;

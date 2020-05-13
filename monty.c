@@ -34,12 +34,8 @@ int main(int argc, char *argv[])
 	while (((_read = getline(&line, &len, _file)) != EOF) && data.status == 0)
 	{
 		line = clean_string(line, _read);
-		/*Divide las lineas*/
 		data.arguments = split_string(line, ' ');
 		simple_free(&line);
-
-		/*Mirar si se puede ejecutar, si no libere y exit, imprimir USAGE*/
-		/*con error, si se puede ejecuta y libera arguments*/
 		exec_commands()(&top, lineNumber);
 		free_argument(data.arguments);
 		lineNumber++;
@@ -47,7 +43,7 @@ int main(int argc, char *argv[])
 	simple_free(&line);
 	free_dlistint(top);
 	fclose(_file);
-	
+
 	if (data.status == EXIT_FAILURE)
 		exit(EXIT_FAILURE);
 

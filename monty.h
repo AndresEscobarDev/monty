@@ -46,6 +46,7 @@ typedef struct instruction_s
  */
 typedef struct Data
 {
+	FILE *file;
 	int status;
 	char **arguments;
 } data_t;
@@ -64,6 +65,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 /*Print Error*/
+void print_usage(void);
 void print_error(int number, char *str);
 void print_mallocfail(void);
 
