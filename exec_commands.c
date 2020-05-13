@@ -20,6 +20,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 
