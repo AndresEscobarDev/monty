@@ -1,2 +1,2 @@
 #!/bin/bash
-valgrind --track-origins=yes --leak-check=yes ./monty bytecodes/00.m
+valgrind -v --track-origins=yes --leak-check=yes ./monty bytecodes/00.m
