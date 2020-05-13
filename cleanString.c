@@ -41,11 +41,7 @@ char *clean_string(char *entrada, int len)
 		else
 			i++;
 	}
-	if (entrada)
-	{
-		free(entrada);
-		entrada = NULL;
-	}
+	simple_free(&entrada);
 	if (new)
 		new[j] = 0;
 	return (new);
