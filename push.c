@@ -11,15 +11,24 @@ void push(stack_t **stack, unsigned int line_number)
 	int n, i = 0;
 
 	(void)line_number;
-	while (data.arguments[1][i])
+	if (data.arguments[1])
 	{
-		if (data.arguments[1][i] < '0' || data.arguments[1][i] > '9')
+		while (data.arguments[1][i])
 		{
-			print_error(line_number, "usage: push integer");
-			return;
+			if (data.arguments[1][i] < '0' || data.arguments[1][i] > '9')
+			{
+				print_error(line_number, "usage: push integer");
+				return;
+			}
+			i++;
 		}
-		i++;
 	}
+	else
+	{
+		print_error(line_number, "usage: push integer");
+		return;
+	}
+	
 	n = atoi((const char *)data.arguments[1]);
 	new = malloc(sizeof(stack_t));
 	if (!new)
