@@ -14,11 +14,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	if (!stack || !h)
 		return;
-	if (h->prev)
-	{
-		while (h->prev)
-			h = h->prev;
-	}
+
 	for (i = 0; h; i++)
 	{
 		printf("%d\n", h->n);

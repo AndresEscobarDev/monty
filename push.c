@@ -7,7 +7,6 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new, *current;
-	stack_t **head = stack;
 	int n, i = 0;
 
 	(void)line_number;
@@ -36,14 +35,14 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	new->n = n, new->prev = NULL;
-	if (!*head)
+	if (!*stack)
 	{
 		new->next = NULL;
-		*head = new;
+		*stack = new;
 		return;
 	}
-	current = *head;
+	current = *stack;
 	while (current->prev)
 		current = current->prev;
-	current->prev = new, new->next = current;
+	current->prev = new, new->next = current; *stack = new;
 }

@@ -61,6 +61,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 /*Print Error*/

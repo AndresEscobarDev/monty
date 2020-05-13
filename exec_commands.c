@@ -11,6 +11,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"push", push},
 		{"pall", pall},
 		{"nop", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
