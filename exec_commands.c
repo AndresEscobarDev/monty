@@ -21,6 +21,7 @@ void (*exec_commands(unsigned int lineNumber))(stack_t **, unsigned int)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
