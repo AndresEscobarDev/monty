@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 	stack_t *top = NULL;
 	int lineNumber = 1;
 
+	data.mode = 0;
 	data.status = 0;
 	data.arguments = NULL;
-
 	/* Check if argc is != 2*/
 	check_argv(&argc);
 

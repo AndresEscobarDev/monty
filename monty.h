@@ -41,6 +41,7 @@ typedef struct instruction_s
  * struct Data - Arguments and status.
  * @status: exit value
  * @arguments: arguments by line
+ * @mode: 1 queue or  0 stack
  *
  * Description: Manage the argument and exit status
  */
@@ -48,6 +49,7 @@ typedef struct Data
 {
 	int status;
 	char **arguments;
+	int mode;
 } data_t;
 extern data_t data;
 
@@ -74,6 +76,11 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+
+void add_queue(stack_t **stack);
+void add_stack(stack_t **stack);
 
 /*Print Error*/
 void print_usage(void);
@@ -84,5 +91,6 @@ void print_unknown(int number);
 void free_dlistint(stack_t *head);
 void simple_free(char **entrada);
 void free_argument(char **arguments);
+
 
 #endif

@@ -1,13 +1,12 @@
 #include "monty.h"
 /**
- * push - pushes an element to the stack.
+ * push - pushes an element to the stack or queue mode.
  * @stack: stacker of a doubly linked list
  * @line_number: Number line
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new, *current;
-	int n, i = 0;
+	int i = 0;
 
 	(void)line_number;
 	if (data.arguments[1])
@@ -27,23 +26,8 @@ void push(stack_t **stack, unsigned int line_number)
 		print_error(line_number, "usage: push integer");
 		return;
 	}
-	n = atoi((const char *)data.arguments[1]);
-	new = malloc(sizeof(stack_t));
-	if (!new)
-	{
-		print_mallocfail();
-		return;
-	}
-	new->n = n, new->prev = NULL;
-	if (!*stack)
-	{
-		new->next = NULL;
-		*stack = new;
-		return;
-	}
-	current = *stack;
-	while (current->prev)
-		current = current->prev;
-	current->prev = new, new->next = current;
-	*stack = new;
+	if (data.mode == 0)
+		add_stack(stack);
+	else
+		add_queue(stack);
 }

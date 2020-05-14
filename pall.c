@@ -4,7 +4,6 @@
  * from the top of the stack.
  * @stack: stacker of a doubly linked list
  * @line_number: Number line
- * Return: The number of nodes
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
